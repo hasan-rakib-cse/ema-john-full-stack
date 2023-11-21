@@ -1,0 +1,13 @@
+.twin-container {
+    padding-top: 30px;
+}
+
+.cart-container {
+    height: max-content;
+}
+
+@media screen and (max-width: 767px) {
+    .cart-container {
+        margin-bottom: 20px;
+    }
+}

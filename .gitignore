@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/ema-john-client/node_modules
+/ema-john-client//.pnp
+/ema-john-client/.pnp.js
+
+# testing
+/ema-john-client//coverage
+
+# production
+/ema-john-client//build
+
+# misc
+/ema-john-client/.DS_Store
+/ema-john-client/.env.local
+/ema-john-client/.env.development.local
+/ema-john-client/.env.test.local
+/ema-john-client/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
