@@ -48,7 +48,7 @@ async function run() {
     app.get('/products', async (req, res) => {
         await client.connect();
 
-        const cursor = productsCollection.find({})
+        const cursor = productsCollection.find({}) // sob data read kortase.
         const services = await cursor.toArray();
         res.send(services);
     })

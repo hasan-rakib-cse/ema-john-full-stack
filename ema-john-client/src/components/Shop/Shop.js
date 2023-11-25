@@ -15,7 +15,7 @@ const Shop = () => {
     const [products, setProducts] = useState([]);
     const [cart, setCart] = useState([])
 
-    // server theke data load korbo.
+    // server theke data load korbo. sei data gulo fake data r bodole use korbo.
     useEffect(() => {
       fetch('http://localhost:4000/products')
       .then(res => res.json())

@@ -10,6 +10,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState({});
     const [isLoading, setIsLoading] = useState(true);
 
+    // single data load kortase database theke.
     useEffect(() => {
       fetch(`http://localhost:4000/product/${productKey}`)
       .then(res => res.json())
