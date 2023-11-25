@@ -12,7 +12,7 @@ const Product = (props) => {
   return (
     <div className='product'>
         <div className='product-image'>
-            <img src={img} alt={name.slice(0, 20) + '...'} />
+            <img src={img} alt='' />
         </div>
         <div className='product-details'>
             <h4 className='product-name'><Link to={'/product/'+key}>{name}</Link></h4>
