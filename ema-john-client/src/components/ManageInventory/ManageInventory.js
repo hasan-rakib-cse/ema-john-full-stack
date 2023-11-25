@@ -3,11 +3,12 @@ import fakeData from '../../fakeData'
 
 const ManageInventory = () => {
 
+  // 1 ta onClick() er maddhome all fakeData mongoDB te insert kore detase.
   const handleAddProduct = () => {
     fetch('http://localhost:4000/addProduct', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(fakeData) // 1 ta onClick() er maddhome all fakeData mongoDB te insert kore detase.
+      body: JSON.stringify(fakeData)
     })
   }
 
