@@ -62,6 +62,17 @@ async function run() {
         const services = await cursor.toArray();
         res.send(services[0]); // jehetu amra 1 ta single item k return kortase tai array[0] dea lagbe.
     })
+
+    // multiple product load from database when passed keys from client-side
+    app.post('/productsByKeys', async (req, res) => {
+      await client.connect();
+
+      const productKeys = req.body;
+      const cursor = productsCollection.find({key: { $in: productKeys }})
+      const services = await cursor.toArray();
+      res.send(services);
+
+    })
     
   } finally {
     // Ensures that the client will close when you finish/error

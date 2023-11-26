@@ -19,9 +19,6 @@ const ProductDetail = () => {
   
     }, [productKey]);
 
-    // const allProduct = fakeData.find(product => product.key === productKey.key)
-    // console.log(allProduct);
-
   return (
     <div>
         <h1>Your Product Details</h1>
