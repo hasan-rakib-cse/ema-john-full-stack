@@ -31,14 +31,16 @@ async function run() {
     await client.connect();
 
     const db = await client.db(`${process.env.DB_NAME}`);
-    const productsCollection = await db.collection(`${process.env.COLLECTION_NAME}`);
+    const productsCollection = await db.collection(`${process.env.PROD_COLL_NAME}`);
+    const ordersCollection = await db.collection(`${process.env.ORDER_COLL_NAME}`);
 
     // CREATE OPERATION
     app.post('/addProduct', async (req, res) => {
         await client.connect();
         const products = req.body;
 
-        await productsCollection.insertMany(products) // front end theke fakeData pathaitase & akhan theke data ek sathe mongoDB te insert kore detase.
+        // await productsCollection.insertMany(products) // front end theke fakeData pathaitase & akhan theke data ek sathe mongoDB te insert kore detase.
+        await productsCollection.insertOne(products) // front end theke 1 ta kore data pathaitase & backend teheke mongoDB te save hobe.
         .then((result) => {
           res.send(result.insertedCount);
         })
@@ -73,6 +75,18 @@ async function run() {
       res.send(services);
 
     })
+
+    // Shipment er order information gulo database e save korbo.
+    app.post('/addOrder', async (req, res) => {
+      await client.connect();
+      const order = req.body;
+
+      // await productsCollection.insertMany(products) // front end theke fakeData pathaitase & akhan theke data ek sathe mongoDB te insert kore detase.
+      await ordersCollection.insertOne(order) // front end theke 1 ta kore data pathaitase & backend teheke mongoDB te save hobe.
+      .then((result) => {
+        res.send(result);
+      })
+  })
     
   } finally {
     // Ensures that the client will close when you finish/error

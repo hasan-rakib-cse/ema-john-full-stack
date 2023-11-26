@@ -4,8 +4,10 @@ const ManageInventory = () => {
 
   const product = {}
 
-  // 1 ta onClick() er maddhome all fakeData mongoDB te insert kore detase.
+  // 1 ta 1 ta kore data, database e save korbo.
   const handleAddProduct = () => {
+    const product = {};
+
     fetch('http://localhost:4000/addProduct', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
